@@ -1,0 +1,42 @@
+<?php
+require "conn.php";
+$user_name = $_GET["user"];
+$user_pass = $_GET["pass"];
+$user_pass = $_GET["pass"];
+$mysql_qry = "UPDATE pokemon SET  where id like '$id' and password like '$user_pass';";
+$result = mysqli_query($conn, $mysql_qry);
+if(mysqli_num_rows($result) > 0 ) {
+mysqli_close($conn);
+while ($row = $result->fetch_assoc()) {
+        echo "update data";
+    }
+}
+else {
+echo mysql_error();
+}
+
+
+?>
+
+
+
+
+
+<?php
+require "conn.php";
+
+        $nama = $_GET['username'];
+        $alamat = $_GET['datos de la app'];
+        $id = $_GET['id'];
+        $query_update = mysql_query("UPDATE tabel_biodata SET nama='$nama', alamat='$alamat' WHERE id='$id'");
+        if ($query_update) {
+            echo "Update Data ";
+        } else {
+            echo mysql_error();
+        }
+$conn->close();
+?>
+  echo "Update Data ";
+        } else {
+            echo mysql_error();
+        }
